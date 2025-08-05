@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Navigate, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Eye, EyeOff, UserPlus } from "lucide-react";
@@ -34,7 +35,10 @@ export function RegisterForm() {
   const onSubmit = (data: RegisterForm) => {
     registerUser(data);
   };
-
+   const navigate = useNavigate();
+    const goToLogin = () => {
+     navigate("/login"); // ✅ Client-side route change
+   };
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-bg">
       <Card className="w-full max-w-md shadow-card border-border/50 bg-card/80 backdrop-blur-md">
@@ -42,7 +46,9 @@ export function RegisterForm() {
           {/* <div className="flex justify-center">
           Junior Ai
           </div> */}
-          <CardTitle className="text-2xl gradient-text">Junior Ai</CardTitle>
+<CardTitle className="text-2xl bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+  Junior Ai
+</CardTitle>
           <CardDescription className="text-muted-foreground">
             Create your account and meet your Junior
           </CardDescription>
@@ -134,9 +140,9 @@ export function RegisterForm() {
 
             <div className="text-center text-sm text-muted-foreground">
               Already have an account?{" "}
-              <a href="/login" className="text-primary hover:text-primary-glow transition-colors">
-                Sign in here
-              </a>
+               <Button variant="link" className="px-1 font-medium" onClick={goToLogin}>
+                 Sign in here
+               </Button>
             </div>
           </form>
         </CardContent>

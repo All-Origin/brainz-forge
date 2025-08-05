@@ -13,6 +13,8 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/shared/Logo";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 const quickActions = [
   { title: "View Leaderboard", icon: Trophy, variant: "mint" as const },
@@ -23,9 +25,20 @@ const quickActions = [
 export function AppSidebar() {
   return (
     <Sidebar className="w-80">
-      <SidebarHeader className="p-4">
-       Junior Ai
-      </SidebarHeader>
+     
+      <div className="flex items-center gap-3 p-5">
+        <Avatar className="h-10 w-10 bg-gradient-rose">
+          <AvatarFallback className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white text-md">
+            Jr.
+          </AvatarFallback>
+        </Avatar>
+
+        <SidebarHeader className="text-xl font-bold text-transparent bg-gradient-to-r from-rose-500 via-pink-500 to-yellow-400 bg-clip-text">
+          Junior AI
+        </SidebarHeader>
+      </div>
+    
+     
       
       <SidebarContent className="px-4 space-y-4">
         {/* Junior Status */}
@@ -39,7 +52,8 @@ export function AppSidebar() {
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-0">
-            <Button variant="rose" size="sm" className="w-full">
+            <Button variant="rose" size="sm" className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white text-md">
+         
               <Zap className="h-3 w-3" />
               Continue Training
             </Button>
@@ -78,7 +92,7 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Button 
-                      variant={item.variant} 
+                      variant={`rose`} 
                       className="w-full justify-start h-8" 
                       size="sm"
                     >

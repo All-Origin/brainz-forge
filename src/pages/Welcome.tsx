@@ -4,6 +4,7 @@ import { Logo } from "@/components/shared/Logo";
 import { Brain, Zap, Trophy, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 export default function Welcome() {
   return (
     <div className="min-h-screen bg-gradient-bg">
@@ -11,7 +12,7 @@ export default function Welcome() {
       <section className="relative overflow-hidden">
         <div className="container mx-auto px-4 py-20 text-center">
           <div className="flex justify-center mb-8">
-            <Logo size="xl" animated />
+            <Logo size="2xl" animated />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold gradient-text mb-6 animate-float">
@@ -126,7 +127,11 @@ export default function Welcome() {
                 Create Your Junior
               </Button>
             </Link>
+           <hr className="my-8 border-border/20" />
           </div>
+           <a href="https://jeet-solanki-portfolio.netlify.app/" className="ml-4 text-primary hover:text-primary-glow transition-colors">
+           <h6> Powerd by JLSS</h6>
+            </a>
         </div>
         
         {/* Background gradient */}

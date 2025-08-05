@@ -119,7 +119,7 @@ export default function Welcome() {
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               Join thousands of users already training their personal AI companions. 
-              Your Brainz is waiting to learn from you.
+              Your Junior is waiting to learn from you.
             </p>
             <Link to="/register">
               <Button variant="rose" size="xl" className="glow-primary">

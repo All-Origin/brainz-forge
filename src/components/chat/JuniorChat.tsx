@@ -12,11 +12,11 @@ interface Message {
   timestamp: Date;
 }
 
-export function BrainzChat() {
+export function JuniorChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      content: "Hi there! I'm your Brainz AI companion. I'm excited to chat with you and help you learn! What would you like to explore today? 🌸",
+      content: "Hi there! I'm your Junior AI companion. I'm excited to chat with you and help you learn! What would you like to explore today? 🌸",
       isUser: false,
       timestamp: new Date(),
     },
@@ -58,9 +58,9 @@ export function BrainzChat() {
             className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
           >
             <div className={`flex items-start gap-3 max-w-[80%] ${message.isUser ? "flex-row-reverse" : ""}`}>
-              <Avatar className={`h-8 w-8 ${message.isUser ? "bg-gradient-mint" : "bg-gradient-rose"}`}>
-                <AvatarFallback className="bg-transparent text-white text-xs">
-                  {message.isUser ? "Y" : <Brain className="h-4 w-4" />}
+              <Avatar className={`h-9 w-10 ${message.isUser ? "bg-gradient-mint" : "bg-gradient-rose"}`}>
+                <AvatarFallback className="bg-transparent text-black text-xs">
+                  {message.isUser ? "You" : "Junior"}
                 </AvatarFallback>
               </Avatar>
               
@@ -84,7 +84,7 @@ export function BrainzChat() {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask Brainz anything... 🌼"
+            placeholder="Ask Junior anything... 🌼"
             onKeyPress={(e) => e.key === "Enter" && handleSend()}
             className="flex-1 border-rose/20 focus:border-rose"
           />
@@ -98,7 +98,7 @@ export function BrainzChat() {
           </Button>
         </div>
         <p className="text-xs text-muted-foreground mt-2 text-center">
-          Brainz learns from our conversations and grows smarter with you! 🌱
+          Junior learns from our conversations and grows smarter with you and Your DNA! 🌱
         </p>
       </div>
     </div>

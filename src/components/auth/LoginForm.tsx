@@ -37,12 +37,12 @@ export function LoginForm() {
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-bg">
       <Card className="w-full max-w-md shadow-card border-border/50 bg-card/80 backdrop-blur-md">
         <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center">
-            <Logo size="lg" />
-          </div>
-          <CardTitle className="text-2xl gradient-text">Welcome Back</CardTitle>
+          {/* <div className="flex justify-center">
+            Junior Ai
+          </div> */}
+          <CardTitle className="text-2xl gradient-text">Welcome Back! Junior is waiting</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Sign in to continue training your AI companion
+            Sign in to continue training your Junior AI companion
           </CardDescription>
         </CardHeader>
         <CardContent>

@@ -24,16 +24,15 @@ export function AppSidebar() {
   return (
     <Sidebar className="w-80">
       <SidebarHeader className="p-4">
-        <Logo size="sm" />
+       Junior Ai
       </SidebarHeader>
       
       <SidebarContent className="px-4 space-y-4">
-        {/* Brainz Status */}
+        {/* Junior Status */}
         <Card className="shadow-soft border-border/50 bg-card/80 backdrop-blur-md">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-rose text-sm">
-              <Brain className="h-4 w-4" />
-              Your Brainz
+              Your Junior
             </CardTitle>
             <CardDescription className="text-xs">
               Level 3 • 1,250 XP

@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 import { Logo } from "@/components/shared/Logo";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const loginSchema = z.object({
   username: z.string().min(1, "Username is required"),
@@ -20,7 +21,8 @@ type LoginForm = z.infer<typeof loginSchema>;
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const { login, isLoginLoading } = useAuth();
-
+  const navigate = useNavigate();
+  
   const {
     register,
     handleSubmit,
@@ -40,7 +42,7 @@ export function LoginForm() {
           {/* <div className="flex justify-center">
             Junior Ai
           </div> */}
-          <CardTitle className="text-2xl gradient-text">Welcome Back! Junior is waiting</CardTitle>
+          <CardTitle className="text-2xl bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 bg-clip-text text-transparent">Junior is waiting!</CardTitle>
           <CardDescription className="text-muted-foreground">
             Sign in to continue training your Junior AI companion
           </CardDescription>
@@ -105,9 +107,9 @@ export function LoginForm() {
 
             <div className="text-center text-sm text-muted-foreground">
               Don't have an account?{" "}
-              <a href="/register" className="text-primary hover:text-primary-glow transition-colors">
-                Create one now
-              </a>
+            <Button variant="link" className="px-1 font-medium" onClick={() => navigate("/register")}>
+                Register here
+              </Button>
             </div>
           </form>
         </CardContent>

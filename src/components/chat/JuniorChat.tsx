@@ -58,10 +58,10 @@ export function JuniorChat() {
             className={`flex ${message.isUser ? "justify-end" : "justify-start"}`}
           >
             <div className={`flex items-start gap-3 max-w-[80%] ${message.isUser ? "flex-row-reverse" : ""}`}>
-              <Avatar className={`h-9 w-10 ${message.isUser ? "bg-gradient-mint" : "bg-gradient-rose"}`}>
-                <AvatarFallback className="bg-transparent text-black text-xs">
-                  {message.isUser ? "You" : "Junior"}
-                </AvatarFallback>
+              <Avatar className={`h-8 w-8 ${message.isUser ? "bg-gradient-mint" : "bg-gradient-rose"}`}>
+              <AvatarFallback className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white text-md">
+  {message.isUser ? "You" : "Jr."}
+</AvatarFallback>
               </Avatar>
               
               <Card className={`p-4 shadow-soft border-border/50 ${

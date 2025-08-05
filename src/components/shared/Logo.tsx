@@ -21,7 +21,6 @@ export function Logo({ className, size = "md", animated = true }: LogoProps) {
         "relative rounded-full bg-gradient-primary p-2 shadow-glow-primary",
         animated && "animate-pulse-glow"
       )}>
-        <Brain className={cn("text-white", sizeClasses[size])} />
       </div>
       <span className={cn(
         "font-bold gradient-text",
@@ -30,7 +29,7 @@ export function Logo({ className, size = "md", animated = true }: LogoProps) {
         size === "lg" && "text-2xl",
         size === "xl" && "text-3xl"
       )}>
-        Brainz
+        Junior
       </span>
     </div>
   );

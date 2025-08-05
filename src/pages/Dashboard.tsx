@@ -2,7 +2,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/AppSidebar";
-import { BrainzChat } from "@/components/chat/BrainzChat";
+import { JuniorChat } from "@/components/chat/JuniorChat";
 import { LogOut } from "lucide-react";
 
 export default function Dashboard() {
@@ -38,7 +38,7 @@ export default function Dashboard() {
           </header>
           {/* Main Chat Area */}
           <div className="flex-1 overflow-auto ml-0 md:ml-[4rem]">
-            <BrainzChat />
+            <JuniorChat />
           </div>
         </div>
       </SidebarProvider>

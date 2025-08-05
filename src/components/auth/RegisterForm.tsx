@@ -39,12 +39,12 @@ export function RegisterForm() {
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-bg">
       <Card className="w-full max-w-md shadow-card border-border/50 bg-card/80 backdrop-blur-md">
         <CardHeader className="text-center space-y-4">
-          <div className="flex justify-center">
-            <Logo size="lg" />
-          </div>
-          <CardTitle className="text-2xl gradient-text">Join Brainz</CardTitle>
+          {/* <div className="flex justify-center">
+          Junior Ai
+          </div> */}
+          <CardTitle className="text-2xl gradient-text">Junior Ai</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Create your account and meet your AI companion
+            Create your account and meet your Junior
           </CardDescription>
         </CardHeader>
         <CardContent>

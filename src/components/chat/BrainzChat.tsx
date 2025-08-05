@@ -49,25 +49,7 @@ export function BrainzChat() {
   };
 
   return (
-    <div className="flex flex-col h-full max-h-[calc(100vh-120px)]">
-      {/* Header */}
-      <div className="p-6 border-b border-border/50 bg-card/80 backdrop-blur-md">
-        <div className="flex items-center gap-3">
-          <Avatar className="h-12 w-12 bg-gradient-rose">
-            <AvatarFallback className="bg-transparent">
-              <Brain className="h-6 w-6 text-white" />
-            </AvatarFallback>
-          </Avatar>
-          <div>
-            <h2 className="text-xl font-semibold gradient-text">Chat with Brainz</h2>
-            <p className="text-sm text-muted-foreground flex items-center gap-1">
-              <Sparkles className="h-3 w-3 text-rose" />
-              Your AI companion is online and ready to learn!
-            </p>
-          </div>
-        </div>
-      </div>
-
+    <div className="flex flex-col h-full">
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-6 space-y-4">
         {messages.map((message) => (
@@ -96,8 +78,7 @@ export function BrainzChat() {
           </div>
         ))}
       </div>
-
-      {/* Input */}
+      {/* Input - always at bottom */}
       <div className="p-6 border-t border-border/50 bg-card/80 backdrop-blur-md">
         <div className="flex gap-3">
           <Input

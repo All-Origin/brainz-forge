@@ -17,18 +17,18 @@ export default function Dashboard() {
   }
 
   return (
-    <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-gradient-bg">
-        <AppSidebar />
-        
-        <div className="flex-1 flex flex-col">
+    <div className="flex h-screen">
+      <SidebarProvider>
+        <AppSidebar /> {/* Make sure AppSidebar has a fixed width, e.g. w-64 */}
+        <div className="flex-1 min-w-0 flex flex-col bg-gradient-bg">
           {/* Header */}
-          <header className="border-b border-border/50 bg-card/80 backdrop-blur-md">
+          <header className="border-b border-border/50 bg-card/80 backdrop-blur-md ml-0 md:ml-[4rem]">
             <div className="px-6 py-4 flex items-center justify-between">
               <SidebarTrigger />
               <div className="flex items-center gap-4">
                 <span className="text-sm text-muted-foreground">
-                  Welcome, <span className="text-foreground font-semibold">{user.name}</span>
+                  Welcome,{" "}
+                  <span className="text-foreground font-semibold">{user.name}</span>
                 </span>
                 <Button variant="ghost" size="icon" onClick={() => logout()}>
                   <LogOut className="h-4 w-4" />
@@ -36,13 +36,12 @@ export default function Dashboard() {
               </div>
             </div>
           </header>
-
           {/* Main Chat Area */}
-          <main className="flex-1 bg-gradient-bg">
+          <div className="flex-1 overflow-auto ml-0 md:ml-[4rem]">
             <BrainzChat />
-          </main>
+          </div>
         </div>
-      </div>
-    </SidebarProvider>
+      </SidebarProvider>
+    </div>
   );
 }

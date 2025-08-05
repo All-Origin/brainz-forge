@@ -114,7 +114,7 @@ export function RegisterForm() {
 
             <Button
               type="submit"
-              variant="neural"
+              variant="rose"
               size="lg"
               className="w-full"
               disabled={isRegisterLoading}

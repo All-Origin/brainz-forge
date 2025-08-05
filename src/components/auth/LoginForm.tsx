@@ -85,7 +85,7 @@ export function LoginForm() {
 
             <Button
               type="submit"
-              variant="neural"
+              variant="rose"
               size="lg"
               className="w-full"
               disabled={isLoginLoading}

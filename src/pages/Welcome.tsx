@@ -25,14 +25,14 @@ export default function Welcome() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/register">
-              <Button variant="neural" size="xl" className="group">
+              <Button variant="rose" size="xl" className="group">
                 Start Your Journey
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             
             <Link to="/login">
-              <Button variant="quantum" size="xl">
+              <Button variant="bloom" size="xl">
                 Sign In
               </Button>
             </Link>
@@ -122,7 +122,7 @@ export default function Welcome() {
               Your Brainz is waiting to learn from you.
             </p>
             <Link to="/register">
-              <Button variant="neural" size="xl" className="glow-primary">
+              <Button variant="rose" size="xl" className="glow-primary">
                 Create Your Brainz
               </Button>
             </Link>

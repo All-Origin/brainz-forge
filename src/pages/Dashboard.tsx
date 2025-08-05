@@ -56,11 +56,11 @@ export default function Dashboard() {
               <Progress variant="xp" value={75} className="h-3" />
               
               <div className="grid grid-cols-2 gap-4 mt-6">
-                <Button variant="neural" className="h-12">
+                <Button variant="rose" className="h-12">
                   <Zap className="h-4 w-4" />
                   Continue Training
                 </Button>
-                <Button variant="cyber" className="h-12">
+                <Button variant="lavender" className="h-12">
                   <Brain className="h-4 w-4" />
                   Chat with Brainz
                 </Button>
@@ -95,15 +95,15 @@ export default function Dashboard() {
               <CardTitle className="text-lg">Quick Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <Button variant="quantum" className="w-full justify-start" size="sm">
+              <Button variant="mint" className="w-full justify-start" size="sm">
                 <Trophy className="h-4 w-4" />
                 View Leaderboard
               </Button>
-              <Button variant="quantum" className="w-full justify-start" size="sm">
+              <Button variant="bloom" className="w-full justify-start" size="sm">
                 <Users className="h-4 w-4" />
                 Join Group Chat
               </Button>
-              <Button variant="quantum" className="w-full justify-start" size="sm">
+              <Button variant="sunflower" className="w-full justify-start" size="sm">
                 <Settings className="h-4 w-4" />
                 Account Settings
               </Button>

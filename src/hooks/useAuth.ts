@@ -84,7 +84,7 @@ export const useAuth = () => {
         title: "Welcome to Brainz!",
         description: "Your AI companion is ready to train",
       });
-      navigate('/train');
+      navigate('/dashboard');
     }
     if (registerMutation.isError) {
       const error = registerMutation.error as any;

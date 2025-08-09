@@ -23,9 +23,10 @@ const quickActions = [
   { title: "Join Group Chat", icon: Users, variant: "bloom" as const },
   { title: "Account Settings", icon: Settings, variant: "sunflower" as const },
 ];
-const navigate = useNavigate();
+
 
 export function AppSidebar() {
+  const navigate = useNavigate();
   return (
     <Sidebar className="w-80">
      

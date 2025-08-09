@@ -157,7 +157,7 @@ export default function Welcome() {
            <div>
              <h3 className="font-semibold text-foreground mb-4">Resources</h3>
              <ul className="space-y-2">
-               <li><a href="/docs" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
+               <li><a href="https://junior-docs.netlify.app/" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
                <li><a href="/tutorials" className="text-muted-foreground hover:text-primary transition-colors">Tutorials</a></li>
                <li><a href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
                <li><a href="/api" className="text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>
@@ -169,7 +169,7 @@ export default function Welcome() {
              <h3 className="font-semibold text-foreground mb-4">Community</h3>
              <ul className="space-y-2">
                <li><a href="https://discord.gg/junior-ai" className="text-muted-foreground hover:text-primary transition-colors">Discord Server</a></li>
-               <li><a href="https://github.com/junior-ai/discussions" className="text-muted-foreground hover:text-primary transition-colors">GitHub Discussions</a></li>
+               <li><a href="https://github.com/orgs/All-Origin/discussions" className="text-muted-foreground hover:text-primary transition-colors">GitHub Discussions</a></li>
                <li><a href="/community" className="text-muted-foreground hover:text-primary transition-colors">Forum</a></li>
                <li><a href="/events" className="text-muted-foreground hover:text-primary transition-colors">Events</a></li>
              </ul>
@@ -179,7 +179,7 @@ export default function Welcome() {
            <div>
              <h3 className="font-semibold text-foreground mb-4">Open Source</h3>
              <ul className="space-y-2">
-               <li><a href="https://github.com/junior-ai/core" className="text-muted-foreground hover:text-primary transition-colors">GitHub Repository</a></li>
+               <li><a href="https://github.com/All-Origin" className="text-muted-foreground hover:text-primary transition-colors">GitHub Repository</a></li>
                <li><a href="/contribute" className="text-muted-foreground hover:text-primary transition-colors">Contributing</a></li>
                <li><a href="/license" className="text-muted-foreground hover:text-primary transition-colors">License</a></li>
                <li><a href="/security" className="text-muted-foreground hover:text-primary transition-colors">Security</a></li>
@@ -191,7 +191,7 @@ export default function Welcome() {
          <div className="border-t border-border/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
            <div className="flex items-center space-x-4 mb-4 md:mb-0">
              <Logo size="sm" />
-             <span className="text-muted-foreground">© 2024 Junior AI. All rights reserved.</span>
+             <span className="text-muted-foreground">© 2025 Junior AI. All rights reserved.</span>
            </div>
            
            <div className="flex items-center space-x-6">

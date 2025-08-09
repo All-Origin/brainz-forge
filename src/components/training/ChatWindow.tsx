@@ -5,7 +5,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Send, User, Bot } from "lucide-react";
 import { Chat } from "@/pages/Train";
-import { formatDistanceToNow } from "date-fns";
+import { Card } from "@/components/ui/card";
 
 interface ChatWindowProps {
   chat: Chat;
@@ -33,77 +33,64 @@ export function ChatWindow({ chat, onSendMessage }: ChatWindowProps) {
   };
 
   return (
-    <div className="flex flex-col h-full">
-      {/* Chat Info Bar */}
-      <div className="bg-card/50 border-b border-border/20 p-4">
-        <div className="flex flex-col gap-1">
-          <h3 className="font-medium">{chat.name}</h3>
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-            <span><strong>Topic:</strong> {chat.topic}</span>
-            <span><strong>Aim:</strong> {chat.aim}</span>
+    // ⬇ Main wrapper — you can add a background here if you want the entire chat to have a color
+    <div className="flex flex-col h-full bg-card/80"> 
+      {/* bg-card/80 → controls overall background (from Tailwind theme) */}
+
+      {/* Chat messages area */}
+      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+        {chat.messages.length === 0 ? (
+          <div className="text-center py-12">
+            <Bot className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+            <h3 className="text-lg font-medium mb-2">
+              Start Your Training Session
+            </h3>
+            <p className="text-muted-foreground">
+              Send a message to begin training your Junior AI.
+            </p>
           </div>
-          {chat.description && (
-            <p className="text-sm text-muted-foreground mt-1">{chat.description}</p>
-          )}
-        </div>
+        ) : (
+          chat.messages.map((msg) => (
+            <div
+              key={msg.id}
+              className={`flex items-start gap-3 ${
+                msg.role === "user" ? "flex-row-reverse ml-auto" : ""
+              } max-w-[80%]`} // ← max width for avatar + bubble
+            >
+              <Avatar className="w-8 h-8 bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400">
+                <AvatarFallback className="bg-transparent text-white">
+                  {msg.role === "user" ? <User className="h-4 w-4" /> : "Jr."}
+                </AvatarFallback>
+              </Avatar>
+
+              <Card
+                className={`p-4 shadow-soft border-border/50 break-words whitespace-pre-wrap max-w-[75%]
+                  ${
+                    msg.role === "user"
+                      ? "bg-mint/10 border-mint/20"
+                      : "bg-rose/10 border-rose/20"
+                  }`}
+                // ↑ bg-mint/10 and bg-rose/10 control message bubble background colors
+              >
+                <p className="text-sm leading-relaxed">{msg.content}</p>
+                <span className="text-xs text-muted-foreground mt-2 block">
+                  {msg.timestamp.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </span>
+              </Card>
+            </div>
+          ))
+        )}
+        <div ref={messagesEndRef} />
       </div>
 
-      {/* Messages */}
-      <ScrollArea className="flex-1 p-4">
-        <div className="space-y-4">
-          {chat.messages.length === 0 ? (
-            <div className="text-center py-12">
-              <Bot className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-              <h3 className="text-lg font-medium mb-2">Start Your Training Session</h3>
-              <p className="text-muted-foreground">Send a message to begin training your Junior AI.</p>
-            </div>
-          ) : (
-            chat.messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                {msg.role === 'assistant' && (
-                  <Avatar className="w-8 h-8 bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400">
-                    <AvatarFallback className="bg-transparent text-white">
-                      <Bot className="h-4 w-4" />
-                    </AvatarFallback>
-                  </Avatar>
-                )}
-                
-                <div
-                  className={`max-w-[70%] rounded-lg p-3 ${
-                    msg.role === 'user'
-                      ? 'bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white'
-                      : 'bg-card border border-border/50'
-                  }`}
-                >
-                  <p className="text-sm">{msg.content}</p>
-                  <p
-                    className={`text-xs mt-1 ${
-                      msg.role === 'user' ? 'text-white/70' : 'text-muted-foreground'
-                    }`}
-                  >
-                    {formatDistanceToNow(msg.timestamp, { addSuffix: true })}
-                  </p>
-                </div>
-
-                {msg.role === 'user' && (
-                  <Avatar className="w-8 h-8 bg-primary">
-                    <AvatarFallback>
-                      <User className="h-4 w-4" />
-                    </AvatarFallback>
-                  </Avatar>
-                )}
-              </div>
-            ))
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-      </ScrollArea>
-
-      {/* Message Input */}
-      <div className="border-t border-border/20 p-4 bg-card/50">
+      {/* Input section */}
+      <div
+        className="border-t border-border/20 p-4 bg-card/50"
+        // bg-card/50 → controls background color of the input area
+      >
         <form onSubmit={handleSubmit} className="flex gap-2">
           <Input
             value={message}
@@ -111,8 +98,8 @@ export function ChatWindow({ chat, onSendMessage }: ChatWindowProps) {
             placeholder="Type your training message..."
             className="flex-1"
           />
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             disabled={!message.trim()}
             className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white hover:from-rose-600 hover:via-pink-600 hover:to-yellow-500"
           >

@@ -18,11 +18,13 @@ export function ChatEditDialog({ chat, open, onOpenChange, onSave }: ChatEditDia
     name: chat.name,
     topic: chat.topic,
     aim: chat.aim,
-    description: chat.description
+    description: chat.description,
+    createdAt: chat.createdAt.toLocaleString()
   });
 
   const handleSave = () => {
-    onSave(formData);
+    const { createdAt, ...saveData } = formData;
+    onSave(saveData);
     onOpenChange(false);
   };
 
@@ -78,6 +80,16 @@ export function ChatEditDialog({ chat, open, onOpenChange, onSave }: ChatEditDia
               onChange={(e) => handleChange('description', e.target.value)}
               placeholder="Additional details about this training session..."
               rows={3}
+            />
+          </div>
+          
+          <div>
+            <Label htmlFor="createdAt">Created At</Label>
+            <Input
+              id="createdAt"
+              value={formData.createdAt}
+              readOnly
+              className="bg-muted cursor-not-allowed"
             />
           </div>
         </div>

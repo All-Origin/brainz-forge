@@ -128,6 +128,12 @@ export default function Train() {
           activeChat={activeChat}
           onSelectChat={setActiveChat}
           onNewChat={createNewChat}
+          onDeleteChat={(chatId) => {
+            setChats(prev => prev.filter(chat => chat.id !== chatId));
+            if (activeChat?.id === chatId) {
+              setActiveChat(null);
+            }
+          }}
         />
         
         <div className="flex-1 min-w-0 flex flex-col bg-background/95 backdrop-blur-md ml-0 md:ml-[4rem]">
@@ -153,13 +159,6 @@ export default function Train() {
                 </div>
               </div>
               
-              <Button 
-                onClick={createNewChat}
-                className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white hover:from-rose-600 hover:via-pink-600 hover:to-yellow-500"
-              >
-                <PlusCircle className="h-4 w-4 mr-2" />
-                New Chat
-              </Button>
             </div>
           </header>
 

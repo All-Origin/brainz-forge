@@ -52,8 +52,12 @@ export function AppSidebar() {
             </CardDescription>
           </CardHeader>
           <CardContent className="pt-0">
-            <Button variant="rose" size="sm" className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white text-md">
-         
+            <Button 
+              variant="rose" 
+              size="sm" 
+              className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white text-md"
+              onClick={() => window.location.href = '/train'}
+            >
               <Zap className="h-3 w-3" />
               Continue Training
             </Button>

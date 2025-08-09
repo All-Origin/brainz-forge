@@ -4,14 +4,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "@/components/layout/ProtectedRoute";
-
+import { SidebarProvider } from "@/components/ui/sidebar";
 // Pages
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { AppSidebar } from "./components/layout/AppSidebar";
 import Dashboard from "./pages/Dashboard";
-
+import { AppSidebar } from "@/components/layout/AppSidebar";
 import Train from "./pages/Train";
 import NotFound from "./pages/NotFound";
 
@@ -38,11 +37,16 @@ const App = () => (
             path="/dashboard" 
             element={
               <ProtectedRoute>
-                <AppSidebar />
-                <Dashboard />
-              </ProtectedRoute>
+ <SidebarProvider>
+  
+        <AppSidebar />
+        <Dashboard />
+
+      </SidebarProvider>          
+          </ProtectedRoute>
             } 
           />
+         
           <Route 
             path="/train" 
             element={

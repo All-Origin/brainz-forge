@@ -1,6 +1,4 @@
 import { Brain, Trophy, Users, Settings, Zap, Star } from "lucide-react";
-import { Navigate, useNavigate } from "react-router-dom";
-
 import {
   Sidebar,
   SidebarContent,
@@ -23,7 +21,6 @@ const quickActions = [
   { title: "Join Group Chat", icon: Users, variant: "bloom" as const },
   { title: "Account Settings", icon: Settings, variant: "sunflower" as const },
 ];
-const navigate = useNavigate();
 
 export function AppSidebar() {
   return (
@@ -59,7 +56,7 @@ export function AppSidebar() {
               variant="rose" 
               size="sm" 
               className="bg-gradient-to-br from-rose-500 via-pink-500 to-yellow-400 text-white text-md"
-               onClick={() => navigate("/train")}
+              onClick={() => window.location.href = '/train'}
             >
               <Zap className="h-3 w-3" />
               Continue Training

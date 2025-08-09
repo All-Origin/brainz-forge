@@ -128,15 +128,80 @@ export default function Welcome() {
               </Button>
             </Link>
            <hr className="my-8 border-border/20" />
-          </div>
-           <a href="https://jeet-solanki-portfolio.netlify.app/" className="ml-4 text-primary hover:text-primary-glow transition-colors">
-           <h6> Powerd by JLSS</h6>
-            </a>
-        </div>
-        
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
-      </section>
-    </div>
+         </div>
+          <a href="https://jeet-solanki-portfolio.netlify.app/" className="ml-4 text-primary hover:text-primary-glow transition-colors">
+          <h6> Powerd by JLSS</h6>
+           </a>
+       </div>
+       
+       {/* Background gradient */}
+       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+     </section>
+
+     {/* Footer */}
+     <footer className="bg-card/50 backdrop-blur-md border-t border-border/20">
+       <div className="container mx-auto px-4 py-12">
+         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+           {/* Product */}
+           <div>
+             <h3 className="font-semibold text-foreground mb-4">Product</h3>
+             <ul className="space-y-2">
+               <li><a href="/features" className="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
+               <li><a href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
+               <li><a href="/roadmap" className="text-muted-foreground hover:text-primary transition-colors">Roadmap</a></li>
+               <li><a href="/changelog" className="text-muted-foreground hover:text-primary transition-colors">Changelog</a></li>
+             </ul>
+           </div>
+
+           {/* Resources */}
+           <div>
+             <h3 className="font-semibold text-foreground mb-4">Resources</h3>
+             <ul className="space-y-2">
+               <li><a href="https://junior-docs.netlify.app/" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
+               <li><a href="/tutorials" className="text-muted-foreground hover:text-primary transition-colors">Tutorials</a></li>
+               <li><a href="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
+               <li><a href="/api" className="text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>
+             </ul>
+           </div>
+
+           {/* Community */}
+           <div>
+             <h3 className="font-semibold text-foreground mb-4">Community</h3>
+             <ul className="space-y-2">
+               <li><a href="https://discord.gg/junior-ai" className="text-muted-foreground hover:text-primary transition-colors">Discord Server</a></li>
+               <li><a href="https://github.com/orgs/All-Origin/discussions" className="text-muted-foreground hover:text-primary transition-colors">GitHub Discussions</a></li>
+               <li><a href="/community" className="text-muted-foreground hover:text-primary transition-colors">Forum</a></li>
+               <li><a href="/events" className="text-muted-foreground hover:text-primary transition-colors">Events</a></li>
+             </ul>
+           </div>
+
+           {/* Open Source */}
+           <div>
+             <h3 className="font-semibold text-foreground mb-4">Open Source</h3>
+             <ul className="space-y-2">
+               <li><a href="https://github.com/All-Origin" className="text-muted-foreground hover:text-primary transition-colors">GitHub Repository</a></li>
+               <li><a href="/contribute" className="text-muted-foreground hover:text-primary transition-colors">Contributing</a></li>
+               <li><a href="/license" className="text-muted-foreground hover:text-primary transition-colors">License</a></li>
+               <li><a href="/security" className="text-muted-foreground hover:text-primary transition-colors">Security</a></li>
+             </ul>
+           </div>
+         </div>
+
+         {/* Bottom section */}
+         <div className="border-t border-border/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+           <div className="flex items-center space-x-4 mb-4 md:mb-0">
+             <Logo size="sm" />
+             <span className="text-muted-foreground">© 2025 Junior AI. All rights reserved.</span>
+           </div>
+           
+           <div className="flex items-center space-x-6">
+             <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+             <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a>
+             <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+           </div>
+         </div>
+       </div>
+     </footer>
+   </div>
   );
 }

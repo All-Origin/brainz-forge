@@ -9,7 +9,9 @@ import { ProtectedRoute } from "@/components/layout/ProtectedRoute";
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { AppSidebar } from "./components/layout/AppSidebar";
 import Dashboard from "./pages/Dashboard";
+
 import Train from "./pages/Train";
 import NotFound from "./pages/NotFound";
 
@@ -36,6 +38,7 @@ const App = () => (
             path="/dashboard" 
             element={
               <ProtectedRoute>
+                  <AppSidebar />
                 <Dashboard />
               </ProtectedRoute>
             } 
